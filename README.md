@@ -2,6 +2,8 @@
 
 A modern, responsive personal portfolio website built with React, TypeScript, and Tailwind CSS.
 
+> **🚀 Quick Start**: New to this project? Check out the [QUICKSTART.md](QUICKSTART.md) guide to get up and running in minutes!
+
 ## Features
 
 - 🎨 Modern and clean design
@@ -74,13 +76,18 @@ Edit the file `src/data/index.ts` to update:
 - Projects
 - Skills
 
+For detailed customization instructions, see [CUSTOMIZATION.md](CUSTOMIZATION.md)
+
 ### LinkedIn Integration
 
-The certifications and work experience sections are designed to integrate with LinkedIn. To set this up:
+The certifications and work experience sections are designed to integrate with LinkedIn. 
 
-1. Get your LinkedIn profile data via the LinkedIn API
-2. Update the data fetching logic in `src/data/index.ts`
-3. Consider using LinkedIn's official widgets or third-party services
+For detailed LinkedIn integration instructions, see [LINKEDIN_INTEGRATION.md](LINKEDIN_INTEGRATION.md)
+
+**Quick Summary:**
+- **Manual Updates**: Edit `src/data/index.ts` with your latest LinkedIn information
+- **LinkedIn Badge**: Embed LinkedIn profile badges for live updates
+- **API Integration**: Use LinkedIn API for automated syncing (requires API access)
 
 Note: LinkedIn API access requires approval and proper authentication setup.
 
