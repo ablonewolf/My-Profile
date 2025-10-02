@@ -1,50 +1,50 @@
 export interface Experience {
-  id: string;
-  title: string;
-  company: string;
-  location: string;
-  startDate: string;
-  endDate?: string;
-  description: string[];
-  technologies?: string[];
+	id: string;
+	title: string;
+	company: string;
+	location: string;
+	startDate: string;
+	endDate?: string;
+	description: string[];
+	technologies?: string[];
 }
 
 export interface Certification {
-  id: string;
-  name: string;
-  issuer: string;
-  issueDate: string;
-  expiryDate?: string;
-  credentialId?: string;
-  credentialUrl?: string;
+	id: string;
+	name: string;
+	issuer: string;
+	issueDate: string;
+	expiryDate?: string;
+	credentialId?: string;
+	credentialUrl?: string;
 }
 
 export interface Project {
-  id: string;
-  title: string;
-  description: string[];
-  image?: string;
-  technologies: string[];
-  githubUrl?: string;
-  liveUrl?: string;
+	id: string;
+	title: string;
+	description: string[];
+	image?: string;
+	technologies: string[];
+	githubUrl?: string;
+	liveUrl?: string;
 }
 
 export interface Skill {
-  category: string;
-  items: string[];
+	category: string;
+	items: string[];
 }
 
 export interface PersonalInfo {
-  name: string;
-  title: string;
-  email: string;
-  phone?: string;
-  location: string;
-  bio: string;
-  github?: string;
-  linkedin?: string;
-  website?: string;
-  leetcode?: string;
+	name: string;
+	title: string;
+	email: string;
+	phone?: string;
+	location: string;
+	bio: string;
+	github?: string;
+	linkedin?: string;
+	website?: string;
+	leetcode?: string;
 }
 
 export interface Education {
@@ -56,4 +56,14 @@ export interface Education {
 	endDate?: string;
 	description?: string[];
 }
+
+export interface TestScore {
+	test: string;
+	total: string;
+	sections: {
+		name: string;
+		score: string;
+	}[];
+}
+
 
