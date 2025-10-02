@@ -71,17 +71,52 @@ export const experiences: Experience[] = [
 export const certifications: Certification[] = [
 	{
 		id: '1',
-		name: 'AWS Certified Developer - Associate',
-		issuer: 'Amazon Web Services',
-		issueDate: '2023-06',
-		credentialUrl: 'https://aws.amazon.com/verification',
+		name: 'Spring Boot 3, Spring 6 & Hibernate for Beginners',
+		issuer: 'Udemy',
+		issueDate: '2022-10',
+		credentialUrl: 'https://www.udemy.com/certificate/UC-7b07c6b5-9301-45a4-b000-19d69c5dca93/',
 	},
 	{
 		id: '2',
-		name: 'Professional Scrum Master I',
-		issuer: 'Scrum.org',
-		issueDate: '2022-03',
-		credentialUrl: 'https://www.scrum.org/certificates',
+		name: 'Python for Everybody Specialization',
+		issuer: 'Coursera',
+		issueDate: '2020-09',
+		credentialUrl: 'https://www.coursera.org/account/accomplishments/specialization/certificate/99337KLHU3P7',
+	},
+	{
+		id: '3',
+		name: 'Mathematics for Machine Learning Specialization',
+		issuer: 'Coursera',
+		issueDate: '2023-09',
+		credentialUrl: 'https://www.coursera.org/account/accomplishments/specialization/certificate/L6NJ5TSRRRCG',
+	},
+	{
+		id: '4',
+		name: 'Java Virtual Threads & Concurrency Masterclass [Hands-On]',
+		issuer: 'Udemy',
+		issueDate: '2024-12',
+		credentialUrl: 'https://www.udemy.com/certificate/UC-f5e5e78f-a3bb-4443-8b7d-b6daf42504bd/',
+	},
+	{
+		id: '5',
+		name: 'Mastering Java Reactive Programming [From Scratch]',
+		issuer: 'Udemy',
+		issueDate: '2025-06',
+		credentialUrl: 'https://www.udemy.com/certificate/UC-ef2a6834-4bff-4f6b-9092-2c709fc0fd37/',
+	},
+	{
+		id: '6',
+		name: 'Learn C++ Programming -Beginner to Advance- Deep Dive in C++',
+		issuer: 'Udemy',
+		issueDate: '2023-03',
+		credentialUrl: 'https://www.udemy.com/certificate/UC-e5e7ec8e-b8fe-407a-89e8-00ff07809b10/',
+	},
+	{
+		id: '7',
+		name: 'The Complete SQL Bootcamp: Go from Zero to Hero',
+		issuer: 'Udemy',
+		issueDate: '2025-10',
+		credentialUrl: 'https://www.udemy.com/certificate/UC-2f616f85-4f54-4098-906f-9107be6b3cbe/',
 	},
 ];
 
@@ -212,6 +247,52 @@ export const personalProjects: Project[] = [
 		technologies: ['React', 'TypeScript', 'Bootstrap'],
 		githubUrl: 'https://github.com/ablonewolf/To-Do-List-App',
 	},
+	{
+		id: '3',
+		title: 'Course Catalog Service',
+		description: [
+			'A bank-end service for managing course catalogs, built with Spring Boot and PostgreSQL.',
+			'It provides RESTful APIs for creating, reading, updating, and deleting course information.'
+		],
+		technologies: ['Spring Boot', 'Spring Data JPA', 'PostgreSQL', 'Kotlin', 'TestContainers'],
+		githubUrl: 'https://github.com/ablonewolf/course-catalog-service'
+	},
+	{
+		id: '4',
+		title: 'Task Manager App',
+		description: [
+			'A frontend application to manage tasks, built with Angular and Typescript'
+		],
+		technologies: ['Angular', 'Typescript', 'CSS'],
+		githubUrl: 'https://github.com/ablonewolf/Task-Manager-using-Angular'
+	},
+	{
+		id: '5',
+		title: 'Introduction to Virtual Thread',
+		description: [
+			'A R&D type repository to explore the newly introduced Virtual Thread in Java 21 and its performance compared to traditional threads.'
+		],
+		technologies: ['Java'],
+		githubUrl: 'https://github.com/ablonewolf/virtual-thread-intro'
+	},
+	{
+		id: '6',
+		title: 'Introduction to Reactive Programming in Java with Project Reactor',
+		description: [
+			'A R&D type repository to explore the Reactive Programming paradigm in Java using Project Reactor'
+		],
+		technologies: ['Java', 'Project Reactor'],
+		githubUrl: 'https://github.com/ablonewolf/Reactive-Programming-Intro'
+	},
+	{
+		id: '7',
+		title: 'Algorithms and Data Structures in C++',
+		description: [
+			'A repository containing implementations of various algorithms and data structures in C++'
+		],
+		technologies: ['C++'],
+		githubUrl: 'https://github.com/ablonewolf/Algoritms-and-Data-Structures-in-CPP'
+	}
 ];
 
 export const skills: Skill[] = [
@@ -292,6 +373,19 @@ export const education: Education[] = [
 			'Took part in various club activities and was an active member of the Science Club, the English Club,' +
 			' and the Drama Club',
 		],
+	},
+	{
+		id: '3',
+		degree: 'Secondary School Certificate (Science)',
+		institution: 'St. Joseph Higher Secondary School',
+		location: 'Dhaka, Bangladesh',
+		startDate: '2011-01',
+		endDate: '2013-06',
+		description: [
+			'CGPA: 5.00/5.00',
+			'Took part in various club activities and was an active member of the Science Club, the English Club,' +
+			' and the Drama Club',
+		],
 	}
 ];
 
@@ -300,19 +394,19 @@ export const testScores = [
 		test: "GRE",
 		total: "313 out of 340",
 		sections: [
-			{ name: "Quantitative", score: "161 out of 170" },
-			{ name: "Verbal", score: "152 out of 170" },
-			{ name: "Analytical Writing (AWA)", score: "3.0 out of 6.0" }
+			{name: "Quantitative", score: "161 out of 170"},
+			{name: "Verbal", score: "152 out of 170"},
+			{name: "Analytical Writing (AWA)", score: "3.0 out of 6.0"}
 		]
 	},
 	{
 		test: "TOEFL",
 		total: "99 out of 120",
 		sections: [
-			{ name: "Reading", score: "24 out of 30" },
-			{ name: "Listening", score: "27 out of 30" },
-			{ name: "Speaking", score: "23 out of 30" },
-			{ name: "Writing", score: "25 out of 30" }
+			{name: "Reading", score: "24 out of 30"},
+			{name: "Listening", score: "27 out of 30"},
+			{name: "Speaking", score: "23 out of 30"},
+			{name: "Writing", score: "25 out of 30"}
 		]
 	}
 ];
