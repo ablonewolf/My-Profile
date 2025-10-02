@@ -66,7 +66,7 @@ const Projects = () => {
 					))}
 				</div>
 				<div className="text-center mt-8 text-gray-600">
-					There are more projects in my <a href="https://github.com/ablonewolf" target="_blank"
+					There are more projects in my <a href="https://github.com/ablonewolf?tab=repositories" target="_blank"
 													 rel="noopener noreferrer" className="text-blue-600 underline">GitHub
 					profile</a>.
 				</div>
