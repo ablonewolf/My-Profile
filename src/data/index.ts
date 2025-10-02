@@ -85,30 +85,132 @@ export const certifications: Certification[] = [
 	},
 ];
 
-export const projects: Project[] = [
+export const professionalProjects: Project[] = [
 	{
 		id: '1',
-		title: 'E-Commerce Platform',
-		description: 'Full-stack e-commerce solution with payment integration and admin dashboard',
-		technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-		githubUrl: 'https://github.com/ablonewolf/ecommerce',
-		liveUrl: 'https://example.com',
+		title: 'Bank Middleware',
+		description: [
+			'Designed the database for the application that will work as a transaction middleware between a financial app and a payment gateway.',
+			'Incorporated the features of forwarding payment and collection data, and processing the received notifications further to notify the consumers.',
+			'Made the application scalable by introducing virtual threads so that it can communicate with separate payment partners concurrently.',
+			'Introduced a separate Audit application to monitor the status of all transaction data.'
+		],
+		technologies: ['Java', 'Spring Boot', 'Spring Data JPA', 'Spring WebClient', 'Keycloak', 'PostgreSQL', 'Apache CSV', 'TypeScript', 'Angular'],
 	},
 	{
 		id: '2',
-		title: 'Task Management App',
-		description: 'Collaborative task management application with real-time updates',
-		technologies: ['React', 'TypeScript', 'Firebase', 'Tailwind CSS'],
-		githubUrl: 'https://github.com/ablonewolf/task-manager',
-		liveUrl: 'https://example.com',
+		title: 'BRAC ERP',
+		description: [
+			'Integrated the biometric status for personal profile against all members.',
+			'Designed the changes in the Database and value assignment for various biometric statuses.',
+			'Integrated the biometric inclusion of personal profile in the UI.'
+		],
+		technologies: ['Grails', 'Groovy', 'PostgreSQL'],
 	},
 	{
 		id: '3',
-		title: 'Weather Dashboard',
-		description: 'Real-time weather dashboard with location-based forecasts',
-		technologies: ['React', 'TypeScript', 'OpenWeather API', 'Chart.js'],
-		githubUrl: 'https://github.com/ablonewolf/weather-dashboard',
-		liveUrl: 'https://example.com',
+		title: 'Fuel Management',
+		description: [
+			'Worked as the team lead and maintainer of the back end.',
+			'Set up the skeleton project and designed the database.',
+			'Enforced the SOLID principle.',
+			'Improved the execution time of several data retrieval operations.',
+			'Developed a reusable structure for uploading numerous records via a spreadsheet.',
+			'Instructed Junior peers on clean coding and best practices.'
+		],
+		technologies: ['Spring Boot', 'Spring Security', 'PostgreSQL', 'Apache POI Excel uploader'],
+	},
+	{
+		id: '4',
+		title: 'Vehicle Management',
+		description: [
+			'Served the role of senior engineer.',
+			'Revised the whole codebase and made it maintainable.',
+			'Completed the CRUD of a complex entity and optimized all of its DB operations.',
+			'Resolved issues found in others\' codes and provided regular guidelines.',
+			'Make the query-level operations more performance-oriented.',
+			'Assisted the team lead in designing the database and code review.'
+		],
+		technologies: ['Spring Boot', 'Spring Security', 'PostgreSQL', 'Apache POI Excel uploader'],
+	},
+	{
+		id: '5',
+		title: 'Online Travel App',
+		description: [
+			'Actively involved in developing two modules of the app: tour package and hotel booking.',
+			'Developed APIs for both admin-end and user-end, improved the execution time by some milliseconds.',
+			'Developed responsive web UI and consumed APIs sent from the concerned back-end, implemented complex validation as well.'
+		],
+		technologies: ['Spring Boot', 'Microsoft SQL Server', 'React', 'Tailwind', 'Bootstrap'],
+	},
+	{
+		id: '6',
+		title: 'Passenger Service System',
+		description: [
+			'Developed APIs for airline reservation system admin module.',
+			'Created user-related APIs and React front-end components.',
+			'Conducted research on API gateways (APISIX, Kafka UI, Insecure Deserialization).'
+		],
+		technologies: ['Spring Boot', 'Spring Security', 'Redis', 'React', 'TypeScript'],
+	},
+	{
+		id: '7',
+		title: 'Medict Recommendation Engine',
+		description: [
+			'Medicine recommendation module based on user search and viewed content.',
+			'Enabled AWS simple notification system for batch processing completion tasks.'
+		],
+		technologies: ['Spring Scheduler', 'AWS SNS', 'Spring Batch'],
+	},
+	{
+		id: '8',
+		title: 'Telecommunication Billing System',
+		description: [
+			'Made the billing system adaptable to various requirements.',
+			'Developed adapters for existing billing systems.'
+		],
+		technologies: ['Spring Boot', 'Spring Data JPA'],
+	},
+	{
+		id: '9',
+		title: 'Full Functional ChatBot',
+		description: [
+			'Enhanced Java Reusable Library with WebSocket chatbot support.',
+			'Created REST APIs for user blocking, chat groups, and more.'
+		],
+		technologies: ['Spring Boot', 'WebSocket', 'StockJS'],
+	},
+	{
+		id: '10',
+		title: 'Denka Document Management System',
+		description: [
+			'Document and user management system for a chemical company.',
+			'Developed APIs and resolved UI bugs.'
+		],
+		technologies: ['Spring Boot', 'JQuery', 'BootStrap', 'Responsive Web-Design', 'Thymeleaf'],
+	},
+];
+
+export const personalProjects: Project[] = [
+	{
+		id: '1',
+		title: 'StudentERP',
+		description: [
+			'This is an ERP-based web application.',
+			'The Backend part was built using Spring boot, Spring Restful services, and MySQL.',
+			'The front end was built using React JS and CSS.'
+		],
+		technologies: ['Spring Boot', 'Spring Rest', 'MySQL', 'React', 'CSS'],
+		githubUrl: 'https://github.com/ablonewolf/StudentERP',
+	},
+	{
+		id: '2',
+		title: 'To-Do-List App',
+		description: [
+			'A to-do list web application developed using React, TypeScript, and Bootstrap CSS framework.'
+		],
+		technologies: ['React', 'TypeScript', 'Bootstrap'],
+		githubUrl: 'https://github.com/ablonewolf/To-Do-List-App',
 	},
 ];
 
