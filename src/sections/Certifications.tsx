@@ -14,9 +14,6 @@ const Certifications = () => {
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
           Certifications
         </h2>
-        <p className="text-center text-gray-600 mb-12">
-          Note: Connect your LinkedIn to sync your latest certifications automatically
-        </p>
         <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
           {certifications.map((cert) => (
             <div
