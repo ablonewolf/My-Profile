@@ -22,7 +22,7 @@ export interface Certification {
 export interface Project {
   id: string;
   title: string;
-  description: string;
+  description: string[];
   image?: string;
   technologies: string[];
   githubUrl?: string;
