@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { personalInfo } from '../data';
 
 const Contact = () => {
@@ -87,16 +87,6 @@ const Contact = () => {
                     className="text-gray-700 hover:text-blue-600 transition-colors duration-300"
                   >
                     <FaLinkedin className="text-3xl" />
-                  </a>
-                )}
-                {personalInfo.twitter && (
-                  <a
-                    href={personalInfo.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-blue-600 transition-colors duration-300"
-                  >
-                    <FaTwitter className="text-3xl" />
                   </a>
                 )}
               </div>

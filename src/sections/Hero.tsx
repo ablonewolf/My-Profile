@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { personalInfo } from '../data';
 
 const Hero = () => {
@@ -38,17 +38,6 @@ const Hero = () => {
                 aria-label="LinkedIn"
               >
                 <FaLinkedin className="text-3xl" />
-              </a>
-            )}
-            {personalInfo.twitter && (
-              <a
-                href={personalInfo.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-300"
-                aria-label="Twitter"
-              >
-                <FaTwitter className="text-3xl" />
               </a>
             )}
             {personalInfo.email && (
