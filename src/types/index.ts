@@ -46,3 +46,14 @@ export interface PersonalInfo {
   website?: string;
   leetcode?: string;
 }
+
+export interface Education {
+	id: string;
+	degree: string;
+	institution: string;
+	location: string;
+	startDate: string;
+	endDate?: string;
+	description?: string[];
+}
+

@@ -7,23 +7,25 @@ import Experience from './sections/Experience';
 import Certifications from './sections/Certifications';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
+import Education from "./sections/Education.tsx";
 
 function App() {
-  return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Certifications />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
-  );
+	return (
+		<div className="min-h-screen">
+			<Header/>
+			<main>
+				<Hero/>
+				<About/>
+				<Education/>
+				<Skills/>
+				<Experience/>
+				<Certifications/>
+				<Projects/>
+				<Contact/>
+			</main>
+			<Footer/>
+		</div>
+	);
 }
 
 export default App;

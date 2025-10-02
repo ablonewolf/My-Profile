@@ -160,3 +160,37 @@ export const skills: Skill[] = [
 	},
 ];
 
+import type {Education} from '../types';
+
+export const education: Education[] = [
+	{
+		id: '1',
+		degree: 'B.Sc. in Computer Science & Engineering',
+		institution: 'University of Dhaka',
+		location: 'Dhaka, Bangladesh',
+		startDate: '2016-01',
+		endDate: '2020-01',
+		description: [
+			'CGPA: 2.81/4.00',
+			'Relevant coursework: Data Structures, Algorithms, Database Systems, Software Engineering,' +
+			' Crypography & Computer Security, Distributed Systems & Parallel Computing,' +
+			' Operating Systems, Computer Networks, Web Technologies, Object-Oriented Programming,' +
+			' Microprocessors and Microcontrollers',
+		],
+	},
+	{
+		id: '2',
+		degree: 'Higher Secondary School Certificate (Science)',
+		institution: 'Notre Dame College',
+		location: 'Dhaka, Bangladesh',
+		startDate: '2013-07',
+		endDate: '2015-06',
+		description: [
+			'CGPA: 5.00/5.00',
+			'Took part in various club activities and was an active member of the Science Club, the English Club,' +
+			' and the Drama Club',
+		],
+	}
+];
+
+
