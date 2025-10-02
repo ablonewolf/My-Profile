@@ -295,4 +295,27 @@ export const education: Education[] = [
 	}
 ];
 
+export const testScores = [
+	{
+		test: "GRE",
+		total: "313 out of 340",
+		sections: [
+			{ name: "Quantitative", score: "161 out of 170" },
+			{ name: "Verbal", score: "152 out of 170" },
+			{ name: "Analytical Writing (AWA)", score: "3.0 out of 6.0" }
+		]
+	},
+	{
+		test: "TOEFL",
+		total: "99 out of 120",
+		sections: [
+			{ name: "Reading", score: "24 out of 30" },
+			{ name: "Listening", score: "27 out of 30" },
+			{ name: "Speaking", score: "23 out of 30" },
+			{ name: "Writing", score: "25 out of 30" }
+		]
+	}
+];
+
+
 

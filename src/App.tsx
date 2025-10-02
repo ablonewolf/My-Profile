@@ -8,6 +8,7 @@ import Certifications from './sections/Certifications';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import Education from "./sections/Education.tsx";
+import TestScores from "./sections/TestScores.tsx";
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 				<Hero/>
 				<About/>
 				<Education/>
+				<TestScores/>
 				<Skills/>
 				<Experience/>
 				<Projects/>
