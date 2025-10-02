@@ -21,7 +21,7 @@ A modern, responsive personal portfolio website built with React, TypeScript, an
 - **Contact**: Contact form and information
 
 ## Tech Stack
-
+ 
 - **Framework**: React 19
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
