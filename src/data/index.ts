@@ -317,10 +317,16 @@ export const skills: Skill[] = [
 			'Spring Data JPA',
 			'Spring Security',
 			'Hibernate',
-			'Reactive Programming',
+			'Reactive Programming using Project Reactor',
 			'Spring Web-Flux',
 			'Spring Batch',
 			'Kafka',
+			'RabbitMQ',
+			'Micronaut',
+			'JUnit5',
+			'Mockito',
+			'Web Test Client',
+			'Test Containers'
 		],
 	},
 	{
@@ -328,11 +334,15 @@ export const skills: Skill[] = [
 		items: [
 			'CSS',
 			'Responsive Web Design',
+			'JavaScript',
+			'Typescript',
 			'Bootstrap',
 			'Tailwind',
 			'React',
+			'NextJS',
 			'JQuery',
-			'Node',
+			'Angular',
+			'Prime NG'
 		],
 	},
 	{
@@ -349,7 +359,7 @@ export const skills: Skill[] = [
 	},
 	{
 		category: 'Other',
-		items: ['Docker', 'Linux Command Line', 'SDKMAN'],
+		items: ['Docker', 'Linux Command Line', 'SDKMAN', 'SFTP'],
 	},
 ];
 
