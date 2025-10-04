@@ -13,7 +13,7 @@ const About = () => {
 					{/* Image Section */}
 					<div className="flex justify-center lg:justify-end">
 						<img
-							src="public/profile.jpg"
+							src="/profile.jpg"
 							alt="Profile"
 							className="w-64 h-64 rounded-full object-cover shadow-lg border-4 border-gray-200"
 						/>
