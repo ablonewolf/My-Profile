@@ -14,9 +14,6 @@ const Experience = () => {
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
           Work Experience
         </h2>
-        <p className="text-center text-gray-600 mb-12">
-          Note: Connect your LinkedIn to sync your latest work experience automatically
-        </p>
         <div className="max-w-4xl mx-auto">
           {experiences.map((exp) => (
             <div
