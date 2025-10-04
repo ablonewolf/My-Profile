@@ -13,7 +13,7 @@ const About = () => {
 					{/* Image Section */}
 					<div className="flex justify-center lg:justify-end">
 						<img
-							src={`${import.meta.env.BASE_URL}picture.jpg`}
+							src="/My-Profile/picture.jpg"
 							alt="Profile"
 							className="w-64 h-64 rounded-full object-cover shadow-lg border-4 border-gray-200"
 						/>
