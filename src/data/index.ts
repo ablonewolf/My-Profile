@@ -32,7 +32,6 @@ export const experiences: Experience[] = [
 		company: 'BRAC IT Services Limited',
 		location: 'Gulshan, Dhaka, Bangladesh',
 		startDate: '2024-06',
-		endDate: 'Present',
 		description: [
 			'Developed and maintained the bank middleware application for Financial transactions of BRAC',
 			'Developed the Audit application for the bank middleware to track all the transactions',
