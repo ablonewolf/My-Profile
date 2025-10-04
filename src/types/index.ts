@@ -40,6 +40,7 @@ export interface PersonalInfo {
 	email: string;
 	phone?: string;
 	location: string;
+	summaryBio?: string;
 	bio: string;
 	github?: string;
 	linkedin?: string;

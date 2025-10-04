@@ -5,14 +5,25 @@ export const personalInfo: PersonalInfo = {
 	title: 'Full Stack Software Engineer',
 	email: 'arkabhuiyancsedu@gmail.com',
 	location: 'Dhaka, Bangladesh',
-	bio: 'A passionate CS major and Software Engineer in Full stack Web Application development with a focus on Backend technologies.' +
-		' Experienced in building scalable web applications and working with cross-functional teams to deliver high-quality software solutions.' +
-		' Proficient in Java, Kotlin, C++, Spring Framework, TypeScript, JavaScript, React, Angular, and Python. Strong problem-solving skills and a keen eye for detail.',
+	bio: "With over three and a half years of experience in full-stack web development," +
+		" I specialize in backend engineering with Java and Spring Boot. My work has been driven by a passion" +
+		" for building scalable, high-performing applications and collaborating with teams to deliver" +
+		" reliable software solutions.  \n\nMy expertise lies at the intersection of backend development," +
+		" Linux-based systems, and distributed computing. From designing efficient APIs and microservices" +
+		" to exploring parallel computing, Big Data, security, and cryptography, I enjoy tackling complex " +
+		"challenges with clean, maintainable approaches.  \n\nBeyond my professional work, I thrive on continuous" +
+		" learning—whether it’s solving algorithmic challenges on LeetCode, experimenting with open-source tools," +
+		" or diving into new technologies. My focus is always on combining strong engineering fundamentals with" +
+		" forward-thinking approaches that push software boundaries.",
+	summaryBio: "I'm a Software Engineer with over 3.5 years of experience in backend development using Java" +
+		" and Spring Boot. My interests span distributed systems, parallel computing, Big Data, and cryptography," +
+		" alongside a strong foundation in Linux-based systems.",
 	github: 'https://github.com/ablonewolf',
 	linkedin: 'https://www.linkedin.com/in/ablonewolf99/',
 	website: 'https://ablonewolf.github.io/My-Profile',
 	leetcode: 'https://leetcode.com/ablonewolf/'
 };
+
 
 export const experiences: Experience[] = [
 	{
@@ -354,7 +365,6 @@ export const education: Education[] = [
 		startDate: '2016-01',
 		endDate: '2020-01',
 		description: [
-			'CGPA: 2.81/4.00',
 			'Relevant coursework: Data Structures, Algorithms, Database Systems, Software Engineering,' +
 			' Crypography & Computer Security, Distributed Systems & Parallel Computing,' +
 			' Operating Systems, Computer Networks, Web Technologies, Object-Oriented Programming,' +
@@ -369,7 +379,6 @@ export const education: Education[] = [
 		startDate: '2013-07',
 		endDate: '2015-06',
 		description: [
-			'CGPA: 5.00/5.00',
 			'Took part in various club activities and was an active member of the Science Club, the English Club,' +
 			' and the Drama Club',
 		],
@@ -382,7 +391,6 @@ export const education: Education[] = [
 		startDate: '2011-01',
 		endDate: '2013-06',
 		description: [
-			'CGPA: 5.00/5.00',
 			'Took part in various club activities and was an active member of the Science Club, the English Club,' +
 			' and the Drama Club',
 		],
