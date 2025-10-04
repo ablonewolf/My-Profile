@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {FaBars, FaTimes} from 'react-icons/fa';
 
 const Header = () => {
@@ -35,11 +35,10 @@ const Header = () => {
 	return (
 		<header
 			className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-				scrolled ? 'bg-white shadow-lg' : 'bg-transparent'
-			}`}
-		>
-			<nav className="container mx-auto px-4 py-4">
+				scrolled ? 'bg-white shadow-lg' : 'bg-transparent'}`}>
+			<nav className="container mx-auto px-4 py-4 relative">
 				<div className="flex items-center justify-between">
+					{/* Logo */}
 					<div className="text-2xl font-bold text-gray-800">
 						<span className="text-blue-600">Arka's</span> Profile
 					</div>
@@ -50,8 +49,7 @@ const Header = () => {
 							<button
 								key={item.id}
 								onClick={() => scrollToSection(item.id)}
-								className="text-gray-700 hover:text-blue-600 transition-colors duration-300"
-							>
+								className="text-gray-700 hover:text-blue-600 transition-colors duration-300">
 								{item.label}
 							</button>
 						))}
@@ -61,21 +59,23 @@ const Header = () => {
 					<button
 						className="md:hidden text-gray-700 text-2xl"
 						onClick={() => setIsOpen(!isOpen)}
-						aria-label="Toggle menu"
-					>
+						aria-label="Toggle menu">
 						{isOpen ? <FaTimes/> : <FaBars/>}
 					</button>
 				</div>
 
 				{/* Mobile Navigation */}
 				{isOpen && (
-					<div className="md:hidden mt-4 pb-4">
+					<div
+						className={`absolute top-full left-0 w-full md:hidden transition-all duration-300 ${
+							scrolled ? 'bg-white shadow-md' : 'bg-gradient-to-br from-blue-50 to-indigo-100'
+						}`}>
 						{navItems.map((item) => (
 							<button
 								key={item.id}
 								onClick={() => scrollToSection(item.id)}
-								className="block w-full text-left py-2 text-gray-700 hover:text-blue-600 transition-colors duration-300"
-							>
+								className="block w-full text-left py-3 px-6 text-gray-700
+								 hover:text-blue-600 transition-colors duration-300">
 								{item.label}
 							</button>
 						))}
@@ -83,6 +83,7 @@ const Header = () => {
 				)}
 			</nav>
 		</header>
+
 	);
 };
 
