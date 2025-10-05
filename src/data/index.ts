@@ -5,11 +5,13 @@ export const personalInfo: PersonalInfo = {
 	title: 'Software Engineer',
 	email: 'arkabhuiyancsedu@gmail.com',
 	location: 'Dhaka, Bangladesh',
-	bio: "With over three and a half years of experience in full-stack web development," +
+	bio: "With over three and a half years of experience in backend web development," +
 		" I specialize in backend engineering with Java and Spring Boot. My work has been driven by a passion" +
 		" for building scalable, high-performing applications and collaborating with teams to deliver" +
 		" reliable software solutions.  \n\nMy expertise lies at the intersection of backend development," +
-		" Linux-based systems, and distributed computing. From designing efficient APIs and microservices" +
+		" Linux-based systems, and distributed computing. Additionally, I possess a moderate knowledge in the realm" +
+		" of frontend development, with notable efficiency in React and Angular." +
+		" From designing efficient APIs and microservices" +
 		" to exploring parallel computing, Big Data, security, and cryptography, I enjoy tackling complex " +
 		"challenges with clean, maintainable approaches.  \n\nBeyond my professional work, I thrive on continuous" +
 		" learning—whether it’s solving algorithmic challenges on LeetCode, experimenting with open-source tools," +
