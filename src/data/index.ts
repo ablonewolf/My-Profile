@@ -2,7 +2,7 @@ import type {PersonalInfo, Experience, Certification, Project, Skill} from '../t
 
 export const personalInfo: PersonalInfo = {
 	name: 'Arka Bhuiyan',
-	title: 'Full Stack Software Engineer',
+	title: 'Software Engineer',
 	email: 'arkabhuiyancsedu@gmail.com',
 	location: 'Dhaka, Bangladesh',
 	bio: "With over three and a half years of experience in full-stack web development," +
