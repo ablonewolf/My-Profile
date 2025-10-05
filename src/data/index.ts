@@ -17,9 +17,9 @@ export const personalInfo: PersonalInfo = {
 		" learning—whether it’s solving algorithmic challenges on LeetCode, experimenting with open-source tools," +
 		" or diving into new technologies. My focus is always on combining strong engineering fundamentals with" +
 		" forward-thinking approaches that push software boundaries.",
-	summaryBio: "I'm a Software Engineer with over 3.5 years of experience in backend development using Java" +
-		" and Spring Boot. My interests span distributed systems, parallel computing, Big Data, and cryptography," +
-		" alongside a strong foundation in Linux-based systems.",
+	summaryBio: "With 3.5+ years of backend development experience using Java and Spring Boot, I focus on building" +
+		" robust, scalable systems. My interests include distributed systems, parallel computing, Big Data," +
+		" cryptography, and leveraging Linux-based environments to deliver reliable solutions.",
 	github: 'https://github.com/ablonewolf',
 	linkedin: 'https://www.linkedin.com/in/ablonewolf99/',
 	website: 'https://ablonewolf.github.io/My-Profile',
