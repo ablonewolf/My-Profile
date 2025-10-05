@@ -8,6 +8,12 @@ const Certifications = () => {
 		return `${monthNames[parseInt(month) - 1]} ${year}`;
 	};
 
+	// Sort certifications by issueDate descending
+	const sortedCertifications = [...certifications].sort((a, b) => {
+		// Compare as YYYY-MM for correct order
+		return b.issueDate.localeCompare(a.issueDate);
+	});
+
 	return (
 		<section id="certifications" className="py-20 bg-gray-50">
 			<div className="container mx-auto px-4">
@@ -15,7 +21,7 @@ const Certifications = () => {
 					Certifications
 				</h2>
 				<div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-					{certifications.map((cert) => (
+					{sortedCertifications.map((cert) => (
 						<div
 							key={cert.id}
 							className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
