@@ -46,7 +46,7 @@ const Header = () => {
 					</div>
 
 					{/* Desktop Navigation */}
-					<div className="hidden md:flex space-x-8">
+					<div className="hidden lg:flex space-x-8">
 						{navItems.map((item) => (
 							<button
 								key={item.id}
@@ -59,7 +59,7 @@ const Header = () => {
 
 					{/* Mobile Menu Button */}
 					<button
-						className="md:hidden text-gray-700 text-2xl"
+						className="lg:hidden text-gray-700 text-2xl"
 						onClick={() => setIsOpen(!isOpen)}
 						aria-label="Toggle menu">
 						{isOpen ? <FaTimes/> : <FaBars/>}
@@ -69,7 +69,7 @@ const Header = () => {
 				{/* Mobile Navigation */}
 				{isOpen && (
 					<div
-						className={`absolute top-full left-0 w-full md:hidden transition-all duration-300 ${
+						className={`absolute top-full left-0 w-full lg:hidden transition-all duration-300 ${
 							scrolled ? 'bg-white shadow-md' : 'bg-gradient-to-br from-blue-50 to-indigo-100'
 						}`}>
 						{navItems.map((item) => (
