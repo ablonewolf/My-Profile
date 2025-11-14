@@ -1,31 +1,76 @@
 import type {PersonalInfo, Experience, Certification, Project, Skill} from '../types';
 
+function numberToWords(n: number): string {
+	const ones = [
+		'zero', 'one', 'two', 'three', 'four', 'five', 'six',
+		'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve',
+		'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen',
+		'eighteen', 'nineteen', 'twenty'
+	];
+	if (n <= 20) return ones[n];
+	const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+	if (n < 100) {
+		const t = Math.floor(n / 10);
+		const r = n % 10;
+		return r === 0 ? tens[t] : `${tens[t]}-${ones[r]}`;
+	}
+	return String(n);
+}
+
+const getExperienceText = () => {
+	const start = new Date('2022-04-01T00:00:00Z');
+	const now = new Date();
+	const msPerYear = 365.2425 * 24 * 60 * 60 * 1000;
+	const years = (now.getTime() - start.getTime()) / msPerYear;
+	const whole = Math.floor(years);
+	const frac = years - whole;
+	let experienceText: string;
+	if (whole === 0) {
+		experienceText = 'less than a year';
+	} else if (frac < 0.25) {
+		experienceText = `over ${numberToWords(whole)} ${whole === 1 ? 'year' : 'years'}`;
+	} else if (frac < 0.75) {
+		experienceText = `over ${numberToWords(whole)} and a half years`;
+	} else {
+		const rounded = whole + 1;
+		experienceText = `over ${numberToWords(rounded)} ${rounded === 1 ? 'year' : 'years'}`;
+
+	}
+	return experienceText;
+}
+
 export const personalInfo: PersonalInfo = {
 	name: 'Arka Bhuiyan',
 	title: 'Software Engineer',
 	email: 'arkabhuiyancsedu@gmail.com',
 	location: 'Dhaka, Bangladesh',
-	bio: "With over three and a half years of experience in backend web development," +
-		" I specialize in backend engineering with Java and Spring Boot. My work has been driven by a passion" +
-		" for building scalable, high-performing applications and collaborating with teams to deliver" +
-		" reliable software solutions.  \n\nMy expertise lies at the intersection of backend development," +
-		" Linux-based systems, and distributed computing. Additionally, I possess a moderate knowledge in the realm" +
-		" of frontend development, with notable efficiency in React and Angular." +
-		" From designing efficient APIs and microservices" +
-		" to exploring parallel computing, Big Data, security, and cryptography, I enjoy tackling complex " +
-		"challenges with clean, maintainable approaches.  \n\nBeyond my professional work, I thrive on continuous" +
-		" learning—whether it’s solving algorithmic challenges on LeetCode, experimenting with open-source tools," +
-		" or diving into new technologies. My focus is always on combining strong engineering fundamentals with" +
-		" forward-thinking approaches that push software boundaries.",
-	summaryBio: "With 3.5+ years of backend development experience using Java and Spring Boot, I focus on building" +
-		" robust, scalable systems. My interests include distributed systems, parallel computing, Big Data," +
-		" cryptography, and leveraging Linux-based environments to deliver reliable solutions.",
+	bio: (() => {
+		return (
+			`With ${getExperienceText()} of experience in backend web development, ` +
+			`I specialize in backend engineering with Java and Spring Boot. My work has been driven by a passion ` +
+			`for building scalable, high-performing applications and collaborating with teams to deliver ` +
+			`reliable software solutions.  \n\nMy expertise lies at the intersection of backend development, ` +
+			`Linux-based systems, and distributed computing. Additionally, I possess a moderate knowledge in the realm ` +
+			`of frontend development, with notable efficiency in React and Angular. From designing efficient APIs and microservices ` +
+			`to exploring parallel computing, Big Data, security, and cryptography, I enjoy tackling complex ` +
+			`challenges with clean, maintainable approaches.  \n\nBeyond my professional work, I thrive on continuous ` +
+			`learning—whether it’s solving algorithmic challenges on LeetCode, experimenting with open-source tools, ` +
+			`or diving into new technologies. My focus is always on combining strong engineering fundamentals with ` +
+			`forward-thinking approaches that push software boundaries.`
+		);
+	})(),
+	summaryBio: (() => {
+		return (
+			`With ${getExperienceText()} years of backend development experience using Java and Spring Boot, I focus on building` +
+			` robust, scalable systems. My interests include distributed systems, parallel computing, Big Data,` +
+			` cryptography, and leveraging Linux-based environments to deliver reliable solutions.`
+		);
+	})(),
 	github: 'https://github.com/ablonewolf',
 	linkedin: 'https://www.linkedin.com/in/ablonewolf99/',
 	website: 'https://ablonewolf.github.io/My-Profile',
 	leetcode: 'https://leetcode.com/ablonewolf/'
 };
-
 
 export const experiences: Experience[] = [
 	{
