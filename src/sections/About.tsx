@@ -39,6 +39,13 @@ const About = () => {
 									<p className="text-gray-600">{personalInfo.phone}</p>
 								</div>
 							)}
+							<div>
+								<h3 className="font-semibold text-gray-800 mb-2">My Type racer Profile</h3>
+								<a href="https://data.typeracer.com/pit/profile?user=arkacsedu&ref=badge" target="_top">
+									<img src="https://data.typeracer.com/misc/badge?user=arkacsedu"
+										 alt="TypeRacer.com scorecard for user arkacsedu"/>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
