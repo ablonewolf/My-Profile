@@ -27,13 +27,15 @@ const getExperienceText = () => {
 	let experienceText: string;
 	if (whole === 0) {
 		experienceText = 'less than a year';
-	} else if (frac < 0.25) {
+	} else if (frac < 0.4) {
 		experienceText = `over ${numberToWords(whole)} ${whole === 1 ? 'year' : 'years'}`;
-	} else if (frac < 0.75) {
-		experienceText = `over ${numberToWords(whole)} and a half years`;
+	} else if (frac >= 0.4 && frac <= 0.6) {
+		experienceText = `nearly ${numberToWords(whole)} ${whole === 1 ? 'half a year' : ' and half a years'}`;
+	} else if (frac > 0.6 && frac <= 0.8) {
+		experienceText = `over ${numberToWords(whole)} ${whole === 1 ? 'half a year' : ' and half a years'}`;
 	} else {
 		const rounded = whole + 1;
-		experienceText = `over ${numberToWords(rounded)} ${rounded === 1 ? 'year' : 'years'}`;
+		experienceText = `nearly ${numberToWords(rounded)} ${rounded === 1 ? 'year' : 'years'}`;
 
 	}
 	return experienceText;
@@ -61,7 +63,7 @@ export const personalInfo: PersonalInfo = {
 	})(),
 	summaryBio: (() => {
 		return (
-			`With ${getExperienceText()} years of backend development experience using Java and Spring Boot, I focus on building` +
+			`With ${getExperienceText()} of backend development experience using Java and Spring Boot, I focus on building` +
 			` robust, scalable systems. My interests include distributed systems, parallel computing, Big Data,` +
 			` cryptography, and leveraging Linux-based environments to deliver reliable solutions.`
 		);
@@ -82,13 +84,16 @@ export const experiences: Experience[] = [
 		description: [
 			'Developed and maintained the bank middleware application for Financial transactions of BRAC',
 			'Developed the Audit application for the bank middleware to track all the transactions',
+			'Re-developed the portion of the frequently used APIs consumed by a third party app using Spring Boot 4 ' +
+			'and optimized the queries, and made them more performant and faster',
+			'Prepared a configurable selection of Projects for tagging various products with the appropriate payment partners',
 			'Took part in R&D projects to explore new technologies and tools for a microservice-based architecture',
 			'Collaborated with cross-functional teams to define, design, and ship new features',
-			'Optimized application performance and scalability',
 			'Participated in code reviews and provided constructive feedback to team members',
 			'Wrote unit and integration tests to ensure code quality and reliability'
 		],
-		technologies: ['Java', 'Spring Framework', 'Postgres', 'SFTP', 'Docker', 'RabbitMQ', 'Typescript', 'Angular'],
+		technologies: ['Java', 'Spring Framework', 'Groovy on Grails', 'Postgres', 'SFTP', 'Docker', 'Redis',
+			'RabbitMQ', 'Typescript', 'Angular'],
 	},
 	{
 		id: '2',
@@ -447,8 +452,7 @@ export const education: Education[] = [
 		startDate: '2011-01',
 		endDate: '2013-06',
 		description: [
-			'Took part in various club activities and was an active member of the Science Club, the English Club,' +
-			' and the Drama Club',
+			'Took part and showcased projects in the annual science fair for straight two years.'
 		],
 	}
 ];
