@@ -14,7 +14,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "refresh:typeracer": "node scripts/refresh-typeracer.mjs",
+    "test": "node --test scripts/*.test.mjs"
   },
   "dependencies": {
     "react": "^19.1.1",
