@@ -132,15 +132,15 @@ It never calls the authenticated API from the browser. GitHub Pages hosting,
    repository secret**. Name it **`TYPERACER_API_KEY`** and set its value to the
    API key alone (not the username, Base64 value, or `Basic` header).
 3. After merging, run **Deploy to GitHub Pages** manually from the Actions tab
-   for the initial refresh. Subsequent pushes to `main` and weekly Monday refreshes
-   at 03:23 UTC (09:23 in Bangladesh) use the same build and deployment workflow.
+   for the initial refresh. Subsequent pushes to `main` and scheduled refreshes
+   every 15 minutes (at minutes 07, 22, 37, and 52 each hour) use the same build and deployment workflow.
 
 The secret is scoped only to the refresh step. Never prefix it with `VITE_`,
 commit it, or put it into client configuration. `npm run build` and development
 work without credentials; `npm run refresh:typeracer` is an explicit server-side
 refresh command requiring Node.js 20 or newer.
 
-Only validated average/best/certified WPM, race and win counts, points, username,
+Only validated current/average/best/certified WPM, race and win counts, points, username,
 and refresh time enter `src/data/typeracer.json`. Raw API responses and credentials
 are neither saved nor logged. The workflow caches only this public JSON after a
 successful build. On missing credentials, HTTP errors, timeout, or invalid API
@@ -152,3 +152,51 @@ scores. A later successful refresh restores statistics automatically.
 
 Validation: `npm test`, `npm run lint`, and `npm run build`. Tests use mocked
 responses; they do not require a real key or contact TypeRacer.
+
+### Current speed and automatic updates
+
+**Current WPM** is the arithmetic mean of the last 10 race speeds in the `play`
+universe, requested with `n=10`. It is displayed first with the note “Average of
+last 10 races.” Certified WPM remains a separate statistic. If fewer than 10
+results are available, or a result has no speed, Current WPM displays a dash.
+The API provides this endpoint for races within the last year.
+
+The raw JavaScript refresh script publishes an allowlisted snapshot to both
+`src/data/typeracer.json` and `public/typeracer-profile.json`. It never publishes
+race histories or keylogs. If either API request fails or contains invalid data,
+the previous snapshot is retained. Each scheduled run rebuilds and deploys the
+existing GitHub Pages site. No backend hosting or additional framework is needed.
+
+The browser checks `typeracer-profile.json` immediately and every minute while
+visible, and again when the tab becomes visible. Successful updates appear
+without reloading the page. Failed checks retain the displayed values. These
+are scheduled snapshots, not live updates after each race: Actions queues,
+deployment time, and browser polling add delay. GitHub can delay scheduled runs,
+and disables schedules in public repositories after 60 days of inactivity.
+
+### Test locally
+
+`npm ci`, `npm test`, `npm run lint`, and `npm run build` need no API secret.
+To test an authenticated refresh, enter the same TypeRacer API key in a hidden
+terminal prompt (Bash):
+
+```bash
+(
+  read -r -s -p 'TypeRacer API key: ' TYPERACER_API_KEY
+  printf '\n'
+  export TYPERACER_API_KEY
+  npm run refresh:typeracer
+)
+npm run dev
+```
+
+The subshell discards the environment variable afterward. Open the local URL
+shown by Vite and inspect the About panel. Only generated public statistics
+are written; never put the key into a file, Vite variable, or command argument.
+Do not commit local generated statistics unless deliberately updating the seed.
+
+After merging this change, open Actions → Deploy to GitHub Pages → Run workflow
+and select `main`. Confirm it succeeds and check
+`https://ablonewolf.github.io/My-Profile/typeracer-profile.json` for populated
+statistics and a recent `updatedAt`. Your existing `TYPERACER_API_KEY` repository
+secret is sufficient; no Cloudflare account or configuration is required.

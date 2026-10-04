@@ -5,7 +5,7 @@ on:
     branches: [ main ]
   workflow_dispatch:
   schedule:
-    - cron: '23 3 * * 1'
+    - cron: '7,22,37,52 * * * *'
 
 permissions:
   contents: read
@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Restore the latest successful public snapshot across weekly deployments.
+      # Restore the latest successful public snapshot across scheduled deployments.
       - name: Restore TypeRacer snapshot
         uses: actions/cache/restore@v4
         with:
