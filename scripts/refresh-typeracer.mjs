@@ -2,21 +2,8 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
 export const snapshotPath = new URL('../src/data/typeracer.json', import.meta.url);
-const username = 'arkacsedu';
-const fields = ['avg_wpm', 'best_wpm', 'total_races', 'total_wins', 'cert_wpm', 'points'];
-
-export function publicSnapshot(payload, now = new Date()) {
-  const stats = payload?.data?.find?.(entry => entry.username === username && entry.universe === 'play');
-  if (payload?.success !== true || !stats || stats.dqd === true) throw new Error('Invalid profile');
-  const safe = Object.fromEntries(fields.map(field => {
-    const value = stats[field];
-    if (value == null && !['total_races', 'total_wins'].includes(field)) return [field, null];
-    if (typeof value !== 'number' || !Number.isFinite(value) || value < 0 ||
-        (field.startsWith('total_') && !Number.isSafeInteger(value))) throw new Error('Invalid statistic');
-    return [field, value];
-  }));
-  return { username, updatedAt: now.toISOString(), stats: safe };
-}
+import { username, publicSnapshot } from '../shared/typeracer.mjs';
+export { publicSnapshot } from '../shared/typeracer.mjs';
 
 export async function refresh({ key = process.env.TYPERACER_API_KEY, fetcher = fetch, path = snapshotPath } = {}) {
   // No response bodies, credentials, or exception messages are logged.

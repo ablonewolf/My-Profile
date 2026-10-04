@@ -16,7 +16,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "refresh:typeracer": "node scripts/refresh-typeracer.mjs",
-    "test": "node --test scripts/*.test.mjs"
+    "test": "node --test scripts/*.test.mjs backend/*.test.js"
   },
   "dependencies": {
     "react": "^19.1.1",
