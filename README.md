@@ -200,3 +200,32 @@ and select `main`. Confirm it succeeds and check
 `https://ablonewolf.github.io/My-Profile/typeracer-profile.json` for populated
 statistics and a recent `updatedAt`. Your existing `TYPERACER_API_KEY` repository
 secret is sufficient; no Cloudflare account or configuration is required.
+
+## Personal favicon
+
+The portfolio uses a blue **AB** monogram for Arka Bhuiyan. SVG, PNG (48 and
+192 pixels), multi-size ICO, and Apple touch icons are provided in `public/`.
+HTML links use Vite's base URL so they work at `/My-Profile/`. The default Vite
+icon is removed. To regenerate raster assets after editing the monogram, run
+`scripts/generate-favicons.py` with Python and Pillow; normal builds need neither.
+
+Search engines choose and cache their own result icons; displaying one is not
+guaranteed immediately after deployment. Google supports one favicon per
+hostname and expects its declaration on the hostname homepage. At the time of
+this change `https://ablonewolf.github.io/` returns 404. This project deployment
+cannot publish files at that root URL. To enable hostname-level discovery,
+serve a homepage from the separate `ablonewolf.github.io` user-site repository
+(or update it if it already exists), and add this to its `<head>`:
+
+```html
+<link rel="icon" type="image/png" sizes="192x192"
+      href="https://ablonewolf.github.io/My-Profile/favicon-192.png">
+```
+
+It can be a simple homepage linking to this portfolio. Keep the portfolio URL
+unchanged. Optionally copy this project's `public/favicon.ico` into the user-site
+repository root for tools that request `/favicon.ico`. Ensure both the root
+homepage and icon return HTTP 200 and are crawlable. Request recrawling of the
+homepage through Search Console/Bing Webmaster Tools once published. Google
+notes that recrawling can take days to weeks; DuckDuckGo controls its own cache.
+See https://developers.google.com/search/docs/appearance/favicon-in-search.
