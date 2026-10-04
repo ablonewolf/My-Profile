@@ -53,6 +53,9 @@ jobs:
 
       - name: Build with Vite
         run: npm run build
+        env:
+          # Public endpoint URL only; the API key remains a backend secret.
+          VITE_TYPERACER_API_URL: ${{ vars.TYPERACER_API_URL }}
 
       - name: Save public TypeRacer snapshot
         uses: actions/cache/save@v4

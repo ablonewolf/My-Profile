@@ -120,35 +120,23 @@ Feel free to fork this repository and customize it for your own use!
 MIT License - feel free to use this project for your personal portfolio.
 ## TypeRacer profile statistics
 
-The About panel uses a public snapshot for `arkacsedu` in the `play` universe.
-It never calls the authenticated API from the browser. GitHub Pages hosting,
-`/My-Profile/` URLs, and existing SEO metadata remain unchanged.
+The native About panel fetches the current `arkacsedu` statistics from a plain
+JavaScript Cloudflare Worker on each page load. The backend lives in `backend/`
+in this same repository and uses built-in Web APIs without a framework.
+The React portfolio remains on GitHub Pages at `/My-Profile/`.
 
-### Configure authenticated refreshes
+**Follow [the full setup and local testing guide](backend/README.md)** to deploy
+the Worker, configure its private TypeRacer secret, and set the public endpoint
+URL in GitHub Actions. Until that URL is configured, the panel displays the
+build-time snapshot. API failures retain the snapshot with an explicit status
+message and its date/time. The weekly Pages refresh maintains this fallback.
 
-1. Sign in to TypeRacer as `arkacsedu`. Open **Edit Profile → Manage Your API Keys**
-   and create an API key. See https://developers.typeracer.com/authentication.html.
-2. In this repository, open **Settings → Secrets and variables → Actions → New
-   repository secret**. Name it **`TYPERACER_API_KEY`** and set its value to the
-   API key alone (not the username, Base64 value, or `Basic` header).
-3. After merging, run **Deploy to GitHub Pages** manually from the Actions tab
-   for the initial refresh. Subsequent pushes to `main` and weekly Monday refreshes
-   at 03:23 UTC (09:23 in Bangladesh) use the same build and deployment workflow.
+The GitHub Actions repository secret `TYPERACER_API_KEY` remains scoped to the
+build-time fallback refresh. Cloudflare needs its own runtime secret with the
+same name. Neither credential enters Vite or the browser. Only the public
+endpoint URL uses the `VITE_TYPERACER_API_URL` variable.
 
-The secret is scoped only to the refresh step. Never prefix it with `VITE_`,
-commit it, or put it into client configuration. `npm run build` and development
-work without credentials; `npm run refresh:typeracer` is an explicit server-side
-refresh command requiring Node.js 20 or newer.
-
-Only validated average/best/certified WPM, race and win counts, points, username,
-and refresh time enter `src/data/typeracer.json`. Raw API responses and credentials
-are neither saved nor logged. The workflow caches only this public JSON after a
-successful build. On missing credentials, HTTP errors, timeout, or invalid API
-data, the existing snapshot is retained and the portfolio can still deploy.
-The panel displays the snapshot date so older statistics are visible as such.
-Caches may expire or be evicted; without a retained snapshot, the initial empty
-snapshot displays an unavailable message and the profile link, never invented
-scores. A later successful refresh restores statistics automatically.
-
-Validation: `npm test`, `npm run lint`, and `npm run build`. Tests use mocked
-responses; they do not require a real key or contact TypeRacer.
+Validation: `npm test`, `npm run lint`, `npm run build`, and
+`npm --prefix backend run check` (install backend tooling first). Tests mock the
+API and require no credentials. The pull-request check workflow also packages
+the Worker without deploying it.
