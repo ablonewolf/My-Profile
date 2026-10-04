@@ -4,6 +4,8 @@ on:
   push:
     branches: [ main ]
   workflow_dispatch:
+  schedule:
+    - cron: '23 3 * * 1'
 
 permissions:
   contents: read
@@ -30,8 +32,33 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Restore the latest successful public snapshot across weekly deployments.
+      - name: Restore TypeRacer snapshot
+        uses: actions/cache/restore@v4
+        with:
+          path: src/data/typeracer.json
+          key: typeracer-play-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            typeracer-play-v1-
+
+      - name: Refresh public TypeRacer statistics
+        run: npm run refresh:typeracer
+        env:
+          TYPERACER_API_KEY: ${{ secrets.TYPERACER_API_KEY }}
+
+      - name: Validate
+        run: |
+          npm test
+          npm run lint
+
       - name: Build with Vite
         run: npm run build
+
+      - name: Save public TypeRacer snapshot
+        uses: actions/cache/save@v4
+        with:
+          path: src/data/typeracer.json
+          key: typeracer-play-v1-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
