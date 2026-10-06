@@ -78,7 +78,7 @@ const TypeRacerProfile = () => {
       ) : <p className="text-sm text-gray-600">Statistics are currently unavailable. View my TypeRacer profile for the latest scores.</p>}
       <p role="status" aria-live="polite" className="text-xs text-gray-600 mt-2">
         {status === 'checking' ? 'Checking published statistics…' : status === 'available' ?
-          'Scheduled refreshes every 15 minutes. This page checks for updates every minute.' :
+          'Current updated type speed' :
           (stats ? 'Update check unavailable. Showing saved statistics.' : 'No published statistics available yet.')}
       </p>
     </section>
